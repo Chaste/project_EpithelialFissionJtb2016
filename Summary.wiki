@@ -1,10 +1,10 @@
-= Model of Crypt Fission =
+= Investigation of Crypt Fission in an Epithelial Layer =
 
 This section contains pages generated automatically from the source code accompanying Almet et al. (2016) 
 "A multicellular model of intestinal crypt fission". 
 
 This model is an extension on a model originally presented in Langlands et al. (2016) http://dx.doi.org/10.1371/journal.pbio.1002491.
-The code to run single simulations can be found at the Paper Tutorial for that paper [wiki:PaperTutorials/CryptFissionPlos2016/CryptFission TestCryptFissionLiteratePaper.hpp]
+The code to run single simulations can be found at the Paper Tutorial for that paper, [wiki:PaperTutorials/CryptFissionPlos2016/CryptFission TestCryptFissionLiteratePaper.hpp]
 
 Before looking at this, you may wish to look at some of the [wiki:UserTutorials basic user tutorials] for Chaste.
 
@@ -28,8 +28,14 @@ You can now run the tests or simulations, or create your own test suites.
 == Documentation ==
 There are two folders - `src` and `test`.
  1. The `src` folder contains the classes necesary to run the simulation. These define the additional forces and boundary conditions not in the core chaste code.
- 1. The `test` folder contains:
-  * [wiki:PaperTutorials/EpithelialFissionJtb2016/test/TestCryptFissionSweepsLiteratePaper.hpp] - this file can be run to generate the results in Figures 7-12.
+  * `EpithelialLayerAnoikisCellKiller.xpp` - removes epithelial cells if they detach from the surrounding nonepithelial cells and enter the lumen.
+  * `EpithelialLayerBasementMembraneForce.xpp` - force that simulates the adhesion effect of the basement membrane.
+  * `EpithelialLayerDataTrackingModifier.xpp`- modifier class that records statistics on the layer's cell population and shape.
+  * `EpithelialLayerLinearSpringForc.xpp` - linear spring force that has a variable spring stiffness depending on the cell types that the spring connects.
+  * `FixedRegionPlaneBoundaryCondition.xpp` - boundary conditin that fixes cells past a certain region.
+  * `StochasticTargetProportionBasedCellCycleModel.xpp` - asymmetric-division-based cell cycle model to control the proportino of soft cells in the layer.
+ 2. The `test` folder contains:
+  * [wiki:PaperTutorials/EpithelialFissionJtb2016/CryptFissionSweeps TestCryptFissionSweepsLiteratePaper.hpp] - this file can be run to generate the results in Figures 7-12.
  == Running tests ==
 You can then run tests and simulations with,
 {{{
