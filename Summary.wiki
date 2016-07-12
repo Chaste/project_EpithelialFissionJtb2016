@@ -29,14 +29,14 @@ You can now run the tests or simulations, or create your own test suites.
 There are two folders - `src` and `test`.
  1. The `src` folder contains the classes necesary to run the simulation. These define the additional forces and boundary conditions not in the core chaste code.
  1. The `test` folder contains:
-  * [wiki:PaperTutorials/EpithelialFissionJtb2016/CryptFission TestCryptFissionSweepsLiteratePaper.hpp] - this file can be run to generate the results in Figures 7--12.
+  * [wiki:PaperTutorials/EpithelialFissionJtb2016/test/TestCryptFissionSweepsLiteratePaper.hpp] - this file can be run to generate the results in Figures 7-12.
  == Running tests ==
 You can then run tests and simulations with,
 {{{
 cd <Chaste3.4 path>
 scons b=GccOpt cl=0 co=1 ts=projects/EpithelialFissionJtb2016/test/TestCryptFissionSweepsLiteratePaper.hpp
 }}}
-Note that this will only compile the test. The following commands will run the simulation over the random number generator seed range {{{INIT_SEED}}}--{{{FINAL_SEED}}}:
+Note that this will only compile the test. The following commands will run the simulation over the random number generator seed range {{{INIT_SEED}}}-{{{FINAL_SEED}}}:
 {{{
 cd projects/EpithelialFissionJtb2016/test/
 sh run_script_for_epithelial_layer_sweeps.sh INIT_SEED FINAL_SEED
